@@ -1,9 +1,41 @@
-# Wind-Turbine-Dataset
+This project contains two semantic segmentation datasets for wind turbines: WTA (Wind Turbine Aerial-image Dataset) and WTS (Wind Turbine Satellite-image Dataset). For specific details, please refer to the Readme.txt in the folder.
 
-This repository distributes two semantic segmentation datasets for wind turbines used in **EdgeAwareUNet: A Lightweight Semantic Segmentation Network for Wind Turbine Extraction from Satellite Imagery** (submitted to *Computers & Geosciences*):
+WTS:
 
-- **WTS (Wind Turbine Satellite-image Dataset)** — satellite imagery with pixel-level annotations for small-target wind-turbine segmentation.
-- **WTA (Wind Turbine Aerial-image Dataset)** — UAV-captured imagery used as an additional validation set.
+![1322](https://github.com/user-attachments/assets/e0b08ab5-2317-4785-8370-3978a691a7c3)
+<img width="512" height="256" alt="1322" src="https://github.com/user-attachments/assets/ec4baf3b-4eca-4ef3-a4bb-c257458bdcc4" />
+
+WTA:
+
+doi: 10.1109/ICUAS54217.2022.9836096
+
+dataset: https://github.com/gzamps/wta_tla_dataset
+
+Note the following changes:
+1>'envB_06t' is a duplicate of 'envB_01'. Action: Moved envB_06t to the training dataset.
+2>'envB_09t' is a duplicate of 'envB_31'. Action: Moved envB_09t to the training dataset.
+3>'envB_07t' is highly similar to 'envB_07'. Actions:
+    training dataset <-> test dataset.
+        ' envB_09 ' <-> ' envB_07t '
+4>'envA_10t' is highly similar to 'envA_74'. Actions:
+    training dataset <-> test dataset.
+        ' envA_34 ' <-> ' envA_10t '
+        
+@inproceedings{za2022wtatla,
+  author={Zampokas, Georgios and Skartados, Evangelos and Alexiou, Dimitrios and Tsiakas, Kosmas and Tzanakis, Ioannis and Roussos, Nikolaos and Giakoumis,   Dimitrios and Kostavelis, Ioannis and Bouganis, Christos-Savvas and Tzovaras, Dimitrios},
+  booktitle={2022 International Conference on Unmanned Aircraft Systems (ICUAS)}, 
+  title={WTA/TLA: A UAV-captured Dataset for Semantic Segmentation of Energy Infrastructure}, 
+  year={2022}
+  
+![envA_03t](https://github.com/user-attachments/assets/2c929a08-699d-46eb-bb5f-07ee441bc763)
+<img width="512" height="256" alt="envA_03t" src="https://github.com/user-attachments/assets/32fce213-e8b0-4d41-95eb-9fd3277465cf" />
+
+
+---
+
+# License and Attribution (added for data-availability compliance)
+
+The following section is added to the original content above. It does not alter any of the original files or notes above.
 
 ## Repository layout
 
@@ -24,8 +56,6 @@ Wind-Turbine-Dataset/
     └── test/                # 35 images (img, label_1D, label_3D)
 ```
 
-Image and mask files share matching stems. `label_1D` stores single-channel class-index masks, `label_3D` stores colored RGB masks, and `viz` stores image–mask overlays for inspection.
-
 ## Data sources and derivative-work statement
 
 ### WTS (derivative dataset)
@@ -37,7 +67,7 @@ WTS is a derivative work built from publicly available sources:
 2. **Wind Turbine Detection** (Kaggle), licensed under **CC BY 4.0**:
    https://www.kaggle.com/datasets/saurabhshahane/wind-turbine-obj-detection
 
-The present study further filtered the source imagery, added and selected patches, and produced the original pixel-level semantic segmentation masks. The underlying imagery remains the work of the original providers; the manual annotations and curation are contributed by the EdgeAwareUNet authors. The WTS directory, including the annotations, is distributed under **CC BY 4.0** (see `WTS_dataset/LICENSE`).
+This study further filtered the source imagery, added and selected patches, and produced the original pixel-level semantic segmentation masks. The underlying imagery remains the work of the original providers; the manual annotations and curation are contributed by the EdgeAwareUNet authors. The WTS directory, including the annotations, is distributed under **CC BY 4.0** (see `WTS_dataset/LICENSE`).
 
 ### WTA (redistributed dataset)
 
@@ -46,7 +76,7 @@ WTA originates from the **WTA/TLA** dataset by Zampokas et al.:
 - Repository: https://github.com/gzamps/wta_tla_dataset
 - DOI: https://doi.org/10.1109/ICUAS54217.2022.9836096
 
-WTA is redistributed here under its original **Apache License 2.0** (see `WTA_dataset/LICENSE`). Copyright and attribution for WTA remain with the original authors. The duplicate-handling changes documented below follow the original dataset notes.
+WTA is redistributed under its original **Apache License 2.0** (see `WTA_dataset/LICENSE`). Copyright and attribution remain with the original authors.
 
 ## Licensing summary
 
@@ -65,15 +95,15 @@ You may reuse, adapt, and redistribute these datasets under the terms of the app
 
 ```bibtex
 @article{edgeawareunet2026,
-  title  = {EdgeAwareUNet: A Lightweight Semantic Segmentation Network for Wind Turbine Extraction from Satellite Imagery},
-  author = {Li, Shibao and Liu, Xiaochen and Gu, Zhaozhi and Gu, Liang and Tian, Haoran},
-  journal= {Computers \& Geosciences},
-  note   = {submitted},
-  year   = {2026}
+  title   = {EdgeAwareUNet: A Lightweight Semantic Segmentation Network for Wind Turbine Extraction from Satellite Imagery},
+  author  = {Li, Shibao and Liu, Xiaochen and Gu, Zhaozhi and Gu, Liang and Tian, Haoran},
+  journal = {Computers \& Geosciences},
+  note    = {submitted},
+  year    = {2026}
 }
 ```
 
-### WTA/TLA source paper
+### WTA/TLA source paper (complete BibTeX entry)
 
 ```bibtex
 @inproceedings{za2022wtatla,
@@ -84,10 +114,3 @@ You may reuse, adapt, and redistribute these datasets under the terms of the app
   doi       = {10.1109/ICUAS54217.2022.9836096}
 }
 ```
-
-## WTA duplicate-handling notes
-
-1. `envB_06t` is a duplicate of `envB_01`. Action: moved `envB_06t` to the training dataset.
-2. `envB_09t` is a duplicate of `envB_31`. Action: moved `envB_09t` to the training dataset.
-3. `envB_07t` is highly similar to `envB_07`. Action: swapped `envB_09` and `envB_07t` between training and test sets.
-4. `envA_10t` is highly similar to `envA_74`. Action: swapped `envA_34` and `envA_10t` between training and test sets.
