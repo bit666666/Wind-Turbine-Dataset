@@ -1,0 +1,69 @@
+{
+  "release": "wts-training-2025",
+  "total_training_pairs": 871,
+  "files": [
+    {
+      "name": "WTS_train_01_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_01_of_09.zip",
+      "bytes": 18280258,
+      "sha256": "f929375a0685cb7224c9631d6ba4e7c1c4f4ea99f3e6022138b24156bd6ce773",
+      "image_mask_pairs": 142
+    },
+    {
+      "name": "WTS_train_02_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_02_of_09.zip",
+      "bytes": 18359807,
+      "sha256": "dd7090a6b8690d82f674619c54fad607af0ff700317c26be2e236ff5ad8157fc",
+      "image_mask_pairs": 151
+    },
+    {
+      "name": "WTS_train_03_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_03_of_09.zip",
+      "bytes": 18363018,
+      "sha256": "e5f3e42edc57e1ac2ef98ce766db6d858fcb2973b9fcb2add4da4f73fbae6741",
+      "image_mask_pairs": 150
+    },
+    {
+      "name": "WTS_train_04_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_04_of_09.zip",
+      "bytes": 18497634,
+      "sha256": "03706051838155f68fe6bf7b69a4dcbe6bb449048896e470cd1f04cacb7c029e",
+      "image_mask_pairs": 150
+    },
+    {
+      "name": "WTS_train_05_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_05_of_09.zip",
+      "bytes": 18269615,
+      "sha256": "9d536cff4205b8643166cdef6968d46441ca6c492a92ebe79f3cb8b51366d313",
+      "image_mask_pairs": 141
+    },
+    {
+      "name": "WTS_train_06_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_06_of_09.zip",
+      "bytes": 18782708,
+      "sha256": "e967db8386e9ab32bd8247fc57400c55f91ee743da7d6331dcb0ba75eee577a2",
+      "image_mask_pairs": 38
+    },
+    {
+      "name": "WTS_train_07_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_07_of_09.zip",
+      "bytes": 18267318,
+      "sha256": "6abc45d7f7dc997b5af74965fe0e7fd2c37bf11599736bc0dd6a0462ffcfd429",
+      "image_mask_pairs": 38
+    },
+    {
+      "name": "WTS_train_08_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_08_of_09.zip",
+      "bytes": 18646081,
+      "sha256": "4aadf38b1bbf2ab1173a9fe0250dcc0267ca3051e2da5117a3160f4fa3dd5d88",
+      "image_mask_pairs": 36
+    },
+    {
+      "name": "WTS_train_09_of_09.zip",
+      "url": "https://github.com/bit666666/Wind-Turbine-Dataset/releases/download/wts-training-2025/WTS_train_09_of_09.zip",
+      "bytes": 12296814,
+      "sha256": "d5a655f3995b7229c5194f86c6d629af96eaad4891e1b183cb1158ce6d5ff4f8",
+      "image_mask_pairs": 25
+    }
+  ]
+}

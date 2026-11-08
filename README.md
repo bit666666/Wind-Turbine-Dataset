@@ -44,6 +44,9 @@ Wind-Turbine-Dataset/
 ├── WTS_dataset/
 │   ├── LICENSE              # CC BY 4.0 (applies to WTS)
 │   ├── Readme.txt
+│   ├── download_training.py # downloads and verifies 871 training image-mask pairs
+│   ├── TRAINING_DOWNLOADS.json
+│   ├── training_manifest.csv
 │   └── test/
 │       ├── img/             # 110 images
 │       ├── label_1D/        # 110 single-channel masks
@@ -67,7 +70,7 @@ WTS is a derivative work built from publicly available sources:
 2. **Wind Turbine Detection** (Kaggle), licensed under **CC BY 4.0**:
    https://www.kaggle.com/datasets/saurabhshahane/wind-turbine-obj-detection
 
-This study further filtered the source imagery, added and selected patches, and produced the original pixel-level semantic segmentation masks. The underlying imagery remains the work of the original providers; the manual annotations and curation are contributed by the EdgeAwareUNet authors. The WTS directory, including the annotations, is distributed under **CC BY 4.0** (see `WTS_dataset/LICENSE`).
+This study further filtered the source imagery, added and selected patches, and produced the original pixel-level semantic segmentation masks. The underlying imagery remains the work of the original providers; the manual annotations and curation are contributed by the EdgeAwareUNet authors. The authors' original WTS annotations are distributed under **CC BY 4.0** (see `WTS_dataset/LICENSE`). Original imagery retains the upstream providers' rights and attribution conditions. A complete file-level source and rights map for supplementary patches is unavailable; see `WTS_dataset/DATA_CARD.md`. This release does not establish additional rights beyond those held by the original providers and annotators.
 
 ### WTA (redistributed dataset)
 
@@ -82,7 +85,8 @@ WTA is redistributed under its original **Apache License 2.0** (see `WTA_dataset
 
 | Component | License | Attribution |
 |---|---|---|
-| WTS imagery and annotations | CC BY 4.0 | Original Figshare/Kaggle providers + this work |
+| WTS original annotations | CC BY 4.0 | EdgeAwareUNet authors and upstream source attribution |
+| WTS source imagery | Upstream source terms; documented records list CC BY 4.0 | Original Figshare/Kaggle providers; see data-card limitations |
 | WTA imagery and annotations | Apache License 2.0 | Zampokas et al. (WTA/TLA) |
 
 There is no single repository-wide license; use the license located inside each dataset directory.
@@ -91,14 +95,13 @@ There is no single repository-wide license; use the license located inside each 
 
 You may reuse, adapt, and redistribute these datasets under the terms of the applicable license. When using **WTS**, please cite both the original source datasets and the EdgeAwareUNet paper, and indicate any changes you made. When using **WTA**, please cite the original WTA/TLA paper and retain the Apache 2.0 notice.
 
-### EdgeAwareUNet paper (submitted)
+### EdgeAwareUNet manuscript
 
 ```bibtex
-@article{edgeawareunet2026,
+@unpublished{edgeawareunet2026,
   title   = {EdgeAwareUNet: A Lightweight Semantic Segmentation Network for Wind Turbine Extraction from Satellite Imagery},
-  author  = {Li, Shibao and Liu, Xiaochen and Gu, Zhaozhi and Gu, Liang and Tian, Haoran},
-  journal = {Computers \& Geosciences},
-  note    = {submitted},
+  author  = {Li, Shibao and Liu, Xiaochen and Gu, Zhaozhi and Guo, Liang and Tian, Haoran},
+  note    = {Manuscript prepared for submission},
   year    = {2026}
 }
 ```
@@ -114,3 +117,14 @@ You may reuse, adapt, and redistribute these datasets under the terms of the app
   doi       = {10.1109/ICUAS54217.2022.9836096}
 }
 ```
+
+
+## Historical training-data completion on 8 November 2026
+
+The complete WTS training split is available from the [public training-data release](https://github.com/bit666666/Wind-Turbine-Dataset/releases/tag/wts-training-2025): **871 images, 871 single-channel segmentation masks, and 871 colored masks**. The training binaries are distributed as nine numbered release assets rather than a partial training tree in Git. After cloning this repository, run:
+
+```bash
+python WTS_dataset/download_training.py
+```
+
+The downloader verifies the archive checksums, extracts `WTS_dataset/train/img`, `train/label_1D`, and `train/label_3D`, and checks all 2,613 files against the manifest. Download all nine parts if using the manual route. The existing WTA data and WTS test data remain in the Git checkout. These files were recovered from the historical 2025 archive. The existing 110-image test split and the WTA 189/35 split are unchanged. See [WTS data card](WTS_dataset/DATA_CARD.md) for dimensions, provenance, label values, and metadata limitations, and [training file manifest](WTS_dataset/training_manifest.csv) for SHA-256 values. The release does not claim geographic independence or complete geospatial metadata.
